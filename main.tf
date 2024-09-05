@@ -139,7 +139,7 @@ resource "null_resource" "configure-cat-app" {
   }
 
   provisioner "file" {
-    source      = "./files/"
+    source      = "https://github.com/ricardorompar/terraform-r2-hashicat/blob/main/files/deploy_app.sh" #please don't do this in production
     destination = "/home/ubuntu/"
 
     connection {

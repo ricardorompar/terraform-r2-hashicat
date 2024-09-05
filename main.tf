@@ -139,7 +139,7 @@ resource "null_resource" "configure-cat-app" {
   }
 
   provisioner "file" {
-    source      = "files"
+    source      = "${path.module}/files/"
     destination = "/home/ubuntu/"
 
     connection {

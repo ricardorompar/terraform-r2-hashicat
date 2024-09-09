@@ -10,8 +10,11 @@ variable "prefix" {
 }
 
 variable "region" {
-  description = "The region where the resources are created."
-  default     = "us-east-1"
+    description = "The region where the resources are created."
+    validation {
+        condition     = contains(["us-east-1", "us-west-2", "eu-central-1"], var.region)
+        error_message = "Must be one of the supported regions"
+    }
 }
 
 variable "address_space" {
@@ -45,6 +48,10 @@ variable "width" {
 }
 
 variable "placeholder" {
-  default     = "placebear.com"
-  description = "Image-as-a-service URL. Some other fun ones to try are fillmurray.com, placecage.com, placebeard.it, loremflickr.com, baconmockup.com, placeimg.com, placebear.com, placeskull.com, stevensegallery.com, placedog.net"
+    default     = "loremflickr.com"
+    description = "Image-as-a-service URL. Loremflickr (cats), placebear (bears) and placedog (turtles...jk)"
+    validation {
+        condition     = contains(["loremflickr.com", "placebear.com", "placedog.net"], var.region)
+        error_message = "Please use one of the specified image-as-a-service URLs"
+    }
 }

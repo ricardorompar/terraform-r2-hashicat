@@ -11,10 +11,6 @@ variable "prefix" {
 
 variable "region" {
     description = "The region where the resources are created."
-    validation {
-        condition     = contains(["us-east-1", "us-west-2", "eu-central-1"], var.region)
-        error_message = "Must be one of the supported regions"
-    }
 }
 
 variable "address_space" {
@@ -29,7 +25,6 @@ variable "subnet_prefix" {
 
 variable "instance_type" {
   description = "Specifies the AWS instance type."
-  default     = "t2.micro"
 }
 
 variable "admin_username" {
@@ -48,10 +43,5 @@ variable "width" {
 }
 
 variable "placeholder" {
-    # default     = "loremflickr.com"
     description = "Image-as-a-service URL. Loremflickr (cats), placebear (bears) and placedog (turtles...jk)"
-    validation {
-        condition     = contains(["loremflickr.com", "placebear.com", "placedog.net"], var.placeholder)
-        error_message = "Please use one of the specified image-as-a-service URLs"
-    }
 }

@@ -51,7 +51,7 @@ variable "placeholder" {
     # default     = "loremflickr.com"
     description = "Image-as-a-service URL. Loremflickr (cats), placebear (bears) and placedog (turtles...jk)"
     validation {
-        condition     = contains(["loremflickr.com", "placebear.com", "placedog.net"], var.region)
+        condition     = contains(["loremflickr.com", "placebear.com", "placedog.net"], var.placeholder)
         error_message = "Please use one of the specified image-as-a-service URLs"
     }
 }

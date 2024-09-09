@@ -48,7 +48,7 @@ variable "width" {
 }
 
 variable "placeholder" {
-    default     = "loremflickr.com"
+    # default     = "loremflickr.com"
     description = "Image-as-a-service URL. Loremflickr (cats), placebear (bears) and placedog (turtles...jk)"
     validation {
         condition     = contains(["loremflickr.com", "placebear.com", "placedog.net"], var.region)

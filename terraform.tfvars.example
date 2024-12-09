@@ -1,0 +1,4 @@
+prefix = "tuprefix"
+instance_type = "t2.xlarge"
+region = "us-east-1"
+placeholder = "loremflickr.com"
